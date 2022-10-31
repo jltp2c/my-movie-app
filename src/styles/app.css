@@ -1,0 +1,171 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #090430;
+}
+
+.headerContainer {
+  text-align: center;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerContainer h1 {
+  color: #f1f1f1;
+  margin: 10px;
+  font-size: 2.5em;
+}
+
+.headerContainer input {
+  padding: 10px;
+  width: 200px;
+}
+
+.headerContainer input::placeholder {
+  margin: 10px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.headerContainer button {
+  margin: 10px;
+  width: 200px;
+  border-radius: 10px;
+  background: #580a7a;
+  color: #f1f1f1;
+}
+
+.favoriteContainer h1 {
+  text-align: center;
+  color: #f1f1f1;
+}
+
+.NavContainer .navigation {
+  display: flex;
+  color: #f1f1f1;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.NavContainer .navigation a {
+  text-decoration: none;
+  margin: 10px;
+}
+
+.NavContainer .navigation a:visited {
+  text-decoration: none;
+  color: #f1f1f1;
+}
+
+.NavContainer .navigation a li {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.NavContainer .navigation .nav-active {
+  border-radius: 10px;
+  background: #580a7a;
+  transition: all 1s ease;
+  animation: anim 0.6s ease forwards;
+}
+
+@keyframes anim {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+.containerCards, .result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 16px;
+  position: relative;
+  text-align: center;
+}
+
+.containerCards .Card, .result .Card {
+  width: 450px;
+  height: 850px;
+  color: #090430;
+  background: #0e104a;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.containerCards .Card h1, .result .Card h1 {
+  font-size: 1.2em;
+}
+
+.containerCards .Card h2, .result .Card h2 {
+  color: #f1f1f1;
+  margin: 10px;
+  font-size: 1em;
+}
+
+.containerCards .Card .poster, .result .Card .poster {
+  height: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  transition: all 0.5s ease;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.766);
+}
+
+.containerCards .Card .poster:hover, .result .Card .poster:hover {
+  transition: all 0.5s ease;
+  transform: translateX(10px);
+}
+
+.containerCards .Card p, .result .Card p {
+  color: #807a7a;
+}
+
+.containerCards .Card h3, .result .Card h3 {
+  color: #f1f1f1;
+  font-size: 0.8em;
+  margin: 0 auto;
+  width: 400px;
+}
+
+.containerCards .Card h3 span, .result .Card h3 span {
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+
+.containerCards .Card ul, .result .Card ul {
+  color: #807a7a;
+  margin: 10px;
+  list-style-type: none;
+  display: flex;
+}
+
+.containerCards .Card ul li, .result .Card ul li {
+  border-radius: 10px;
+  background: #090430;
+  box-shadow: 2px 2px 2px black;
+  width: 100px;
+  margin: 0 auto;
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.containerCards .Card .favorite, .result .Card .favorite {
+  height: 30px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=app.css.map */

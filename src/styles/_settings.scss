@@ -1,0 +1,15 @@
+$color-1 : rgb(88, 10, 122);
+$color-2 : #f1f1f1;
+$color-3 : rgb(9, 4, 48);
+$color-4 : #807a7a;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: $color-3;
+}
+

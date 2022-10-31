@@ -1,0 +1,72 @@
+.containerCards, .result{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    .Card{
+        width: 450px;
+        height: 850px;
+        color: $color-3;
+        background: rgb(14, 16, 74);
+        margin: 10px;
+        border-radius: 10px;
+        h1{
+            font-size: 1.2em;
+        }
+        h2{
+            color: $color-2;
+            margin: 10px;
+            font-size: 1em;
+        }
+        .poster{
+            height: 300px;
+            border-radius: 10px;
+            margin: 10px;
+            transition: all 0.5s ease;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.766);
+            &:hover{
+                transition: all 0.5s ease;
+                transform: translateX(10px);
+            }
+        }
+        p{
+            color: $color-4;
+        }
+
+        h3{
+            color: $color-2;
+            font-size: 0.8em;
+            margin: 0 auto;
+            width: 400px;
+            span{
+                text-decoration: underline;
+                font-size: 1.2em;
+            }
+        }
+        ul{
+            color: $color-4;
+            margin: 10px ;
+            list-style-type: none;
+            display: flex;
+
+            li{
+               border-radius: 10px;
+               background: $color-3;
+               box-shadow: 2px 2px 2px black;
+               width: 100px;
+               margin: 0 auto;
+               padding: 3px;
+               margin-top: 10px;
+            }
+        }
+        .favorite{
+            height: 30px;
+            cursor: pointer;
+            
+        }
+        
+        
+    }
+}
