@@ -15,7 +15,7 @@ useEffect(()=>{
 
   for (let i = 0; i < moviesId.length ; i++){
   axios
-  .get(`https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=e4ac38a97a4c49236afd2027d7a1a1e1`)
+  .get(`https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=e4ac38a97a4c49236afd2027d7a1a1e1&language=fr-FR`)
   .then(res => setListData(list => [...list,res.data]))
   }
 
@@ -29,7 +29,7 @@ useEffect(()=>{
       {
         listData.length > 0 ? (
           listData.map((movie) => <Card movie={movie} key={movie.id}/>)
-        ) : (<h2> Aucun coup de coeur pour le moment </h2>)
+        ) : (<h2> Aucun coup de coeur 💔 pour le moment </h2>)
       }
     </div>
   </div>

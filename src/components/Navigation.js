@@ -9,7 +9,14 @@ function Navigation() {
               <li>Accueil</li>
             </NavLink>
             <NavLink to='/coupdecoeur' className={(nav)=> nav.isActive? "nav-active" : ""}>
-              <li>Coups de coeur</li>
+              <li>Coups de coeur 
+              <span> ({
+              window.localStorage.movies ?
+              (window.localStorage.movies.split(',').length)
+              :
+              ('0')
+              })</span>
+              </li>
             </NavLink>
           </ul>
       </div>

@@ -64,7 +64,11 @@
         .favorite{
             height: 30px;
             cursor: pointer;
-            
+            transition: all 1s ease;
+            &:hover{
+                transform: scale(1.2);
+                transition: all 1s ease;
+            }
         }
         
         

@@ -77,7 +77,6 @@ const movieGenres = () =>{
 
 
 const toggleFav = () => {
-
   let storedData = window.localStorage.movies ? window.localStorage.movies.split(',') : [];
   if(!storedData.includes(movie.id.toString())){
     storedData.push(movie.id)
@@ -86,25 +85,36 @@ const toggleFav = () => {
 }
 
 const deleteToggle = () => {
- 
+  let storedData =  window.localStorage.movies.split(',');
+  let newData = storedData.filter((id)=> id != movie.id)
+  window.localStorage.movies = newData
 }
 
 
 return (
     <div className='Card'>
     {
-      movie.genre_ids ? <img onClick={()=>toggleFav()} className="favorite" src="./img/coeurn.png"/> : <img onClick={()=>deleteToggle()} className="favorite" src="./img/coeur.png"/>
+      movie.genre_ids ? <img onClick={()=>{
+        toggleFav()
+        window.location.reload()
+        }} 
+        className="favorite" src="./img/coeurn.png"/> : 
+      <img onClick={()=>{
+        deleteToggle()
+        window.location.reload()
+        }}
+        className="favorite" src="./img/coeur.png"/>
     }
      
      <img className="poster" src={movie.poster_path?"https://image.tmdb.org/t/p/w500/"+movie.poster_path:"./img/film.png"} alt={`poster of ${movie.title}`}/>
      <h1>{movie.title}</h1>
      <p>Date de sortie : {dateFormater(movie.release_date)} </p>
-     <h2>{movie.vote_average}/10 ⭐ </h2>
+     <h2>{movie.vote_average.toFixed(1)}/10 ⭐ </h2>
      <h3> <span>Synopsis :</span><br/> <br/> {movie.overview ? movie.overview : "Not found"}</h3>
      <ul> 
 
        {
-         movie.genre_ids ? movieGenres() : null 
+         movie.genre_ids ? movieGenres() : movie.genres.map((genre) => (<li key={genre}>{genre.name}</li>))
        }
        
      </ul>

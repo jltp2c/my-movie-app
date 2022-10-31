@@ -47,6 +47,15 @@ body {
   color: #f1f1f1;
 }
 
+.favoriteContainer .result {
+  font-size: 16px;
+}
+
+.favoriteContainer .result h2 {
+  color: #f1f1f1;
+  margin-top: 50px;
+}
+
 .NavContainer .navigation {
   display: flex;
   color: #f1f1f1;
@@ -167,5 +176,11 @@ body {
 .containerCards .Card .favorite, .result .Card .favorite {
   height: 30px;
   cursor: pointer;
+  transition: all 1s ease;
+}
+
+.containerCards .Card .favorite:hover, .result .Card .favorite:hover {
+  transform: scale(1.2);
+  transition: all 1s ease;
 }
 /*# sourceMappingURL=app.css.map */
