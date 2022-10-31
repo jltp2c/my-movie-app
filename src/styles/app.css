@@ -21,11 +21,13 @@ body {
   color: #f1f1f1;
   margin: 10px;
   font-size: 2.5em;
+  margin-top: 75px;
 }
 
 .headerContainer input {
   padding: 10px;
   width: 200px;
+  border-radius: 10px;
 }
 
 .headerContainer input::placeholder {
@@ -42,18 +44,29 @@ body {
   color: #f1f1f1;
 }
 
-.favoriteContainer h1 {
-  text-align: center;
-  color: #f1f1f1;
+.favoriteContainer {
+  display: flex;
+  flex-direction: column;
 }
 
 .favoriteContainer .result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   font-size: 16px;
+  margin-top: 75px;
 }
 
 .favoriteContainer .result h2 {
   color: #f1f1f1;
   margin-top: 50px;
+}
+
+.NavContainer {
+  position: fixed;
+  z-index: 1000;
+  background: #090430;
+  border-radius: 10px;
 }
 
 .NavContainer .navigation {
@@ -117,8 +130,17 @@ body {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 470px) {
+  .containerCards .Card, .result .Card {
+    width: 300px;
+    height: 900px;
+  }
+}
+
 .containerCards .Card h1, .result .Card h1 {
   font-size: 1.2em;
+  color: #f1f1f1;
+  margin: 10px;
 }
 
 .containerCards .Card h2, .result .Card h2 {
@@ -156,11 +178,19 @@ body {
   font-size: 1.2em;
 }
 
+@media screen and (max-width: 470px) {
+  .containerCards .Card h3, .result .Card h3 {
+    width: 280px;
+  }
+}
+
 .containerCards .Card ul, .result .Card ul {
   color: #807a7a;
   margin: 10px;
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .containerCards .Card ul li, .result .Card ul li {

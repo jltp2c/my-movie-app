@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Navigation from '../components/Navigation';
 import {useState, useEffect} from 'react'
 import axios from 'axios';
@@ -22,17 +22,21 @@ useEffect(()=>{
 }, [])
 
   return (
-  <div className='favoriteContainer'>
-    <Navigation/>
-    <h1>Coups de coeur 🥰 </h1>
-    <div className="result">
-      {
-        listData.length > 0 ? (
-          listData.map((movie) => <Card movie={movie} key={movie.id}/>)
-        ) : (<h2> Aucun coup de coeur 💔 pour le moment </h2>)
-      }
+
+    
+    <div className='favoriteContainer'>
+      <Navigation/>
+      
+      <div className="result">
+
+        {
+          listData.length > 0 ? (
+            listData.map((movie) => <Card movie={movie} key={movie.id}/>)
+          ) : (<h2> Aucun coup de coeur 💔 pour le moment </h2>)
+        }
+      </div>
     </div>
-  </div>
+  
   )
 }
 

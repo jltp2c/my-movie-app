@@ -1,4 +1,8 @@
 .NavContainer{
+  position: fixed;
+  z-index: 1000;
+  background: $color-3;
+  border-radius: 10px;
     .navigation{
         display: flex;
         color: $color-2;

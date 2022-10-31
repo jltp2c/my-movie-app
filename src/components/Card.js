@@ -1,9 +1,11 @@
+import {toast} from 'react-toastify';
+import ReactTooltip from 'react-tooltip';
 
 const Card= ({movie}) => {
 
 const dateFormater = (date) => {
-  let [AAAA, MM,DD]= date.split('-');
-  return [DD,MM,AAAA].join('/');
+  let [YY, MM,DD]= date.split('-');
+ return [DD,MM,YY].join("/")
 }
 
 const movieGenres = () =>{
@@ -84,31 +86,35 @@ const toggleFav = () => {
   window.localStorage.movies = storedData; 
 }
 
+
 const deleteToggle = () => {
   let storedData =  window.localStorage.movies.split(',');
   let newData = storedData.filter((id)=> id != movie.id)
   window.localStorage.movies = newData
 }
 
+const notify = () => {
+  toast.success(`"${movie.title}" a été ajouté en favoris !`)
+}
+
 
 return (
     <div className='Card'>
     {
-      movie.genre_ids ? <img onClick={()=>{
-        toggleFav()
-        window.location.reload()
-        }} 
-        className="favorite" src="./img/coeurn.png"/> : 
-      <img onClick={()=>{
-        deleteToggle()
+      movie.genre_ids ? <img data-tip="Ajouter !" onClick={()=>{toggleFav() ; notify()}} className="favorite" src="./img/coeurn.png"/> 
+      : 
+      <img 
+        data-tip="Supprimer !"
+        onClick={()=>{
+        deleteToggle();
         window.location.reload()
         }}
         className="favorite" src="./img/coeur.png"/>
     }
-     
+    <ReactTooltip place='left' effect='solid' type='light'/>
      <img className="poster" src={movie.poster_path?"https://image.tmdb.org/t/p/w500/"+movie.poster_path:"./img/film.png"} alt={`poster of ${movie.title}`}/>
      <h1>{movie.title}</h1>
-     <p>Date de sortie : {dateFormater(movie.release_date)} </p>
+     <p>Date de sortie : { movie.release_date? dateFormater(movie.release_date) : "Pas de date"} </p>
      <h2>{movie.vote_average.toFixed(1)}/10 ⭐ </h2>
      <h3> <span>Synopsis :</span><br/> <br/> {movie.overview ? movie.overview : "Not found"}</h3>
      <ul> 

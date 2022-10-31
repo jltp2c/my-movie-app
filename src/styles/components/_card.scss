@@ -12,8 +12,14 @@
         background: rgb(14, 16, 74);
         margin: 10px;
         border-radius: 10px;
+        @media screen and (max-width: 470px) {
+            width: 300px;
+            height: 900px;
+        }
         h1{
             font-size: 1.2em;
+            color: $color-2;
+            margin: 10px;
         }
         h2{
             color: $color-2;
@@ -44,12 +50,17 @@
                 text-decoration: underline;
                 font-size: 1.2em;
             }
+            @media screen and (max-width: 470px) {
+                width: 280px;
+            }
         }
         ul{
             color: $color-4;
             margin: 10px ;
             list-style-type: none;
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
 
             li{
                border-radius: 10px;
